@@ -1,0 +1,9 @@
+1. Korisnicko uputstvo
+2. Internacionalizacija - u Login prozoru, bira se u ComboBox-u izmedju
+Engleskog i Srpskog
+3. Podrska za razlicite tipove naloga: administratorski i obican.
+Administratorski - mogu da rade sa nalozima ostalih zaposlenih
+Obican - mogu da rade samo sa podacima u bazi, i zakljucivanje racuna.
+4. Korisnicka podesavanja - teme: u Main prozoru, aplikacija moze da prolazi
+kroz razlicita stanja (teme) koje se pamte po korisniku po zatvaranju aplikacije,
+klikom na dugme u gornjem desnom uglu.

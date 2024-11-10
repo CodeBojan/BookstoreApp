@@ -1,0 +1,19 @@
+﻿<Application x:Class="Bookstore.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:Bookstore"
+             Exit="AppExitEventHandler">
+    <!--The resource dictionary property can only be set once, so we have to make them merged into one-->
+    <Application.Resources>
+        <ResourceDictionary x:Name="Style1">
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary x:Name="Theme1" Source="./Styles/GUIColors.xaml"/>
+                <ResourceDictionary x:Name="Theme2" Source="./Styles/GUIColors2.xaml"/>
+                <ResourceDictionary x:Name="Theme3" Source="./Styles/GUIColors3.xaml"/>
+                <ResourceDictionary x:Name="ButtonStyles" Source="./Styles/ButtonStyles.xaml"/>
+                <ResourceDictionary x:Name="TextBoxStyles" Source="./Styles/TextBoxStyles.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Application.Resources>
+
+</Application>

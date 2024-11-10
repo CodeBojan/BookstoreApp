@@ -1,0 +1,149 @@
+﻿<UserControl x:Class="Bookstore.View.AddBook"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:Haley="http://schemas.hpod9.com/haley/mvvm"
+             xmlns:CustomControls="clr-namespace:Bookstore.CustomControls"
+             xmlns:local="clr-namespace:Bookstore.View"
+             mc:Ignorable="d" 
+             d:DesignHeight="700" d:DesignWidth="800"
+             Background="Transparent">
+    <Border>
+        <Border.BorderBrush>
+            <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                <GradientStop Color="{DynamicResource winBorderColor1}" Offset="0"/>
+                <GradientStop Color="{DynamicResource winBorderColor2}"  Offset="0.75"/>
+                <GradientStop Color="{DynamicResource winBorderColor3}"  Offset="1"/>
+            </LinearGradientBrush>
+        </Border.BorderBrush>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="400"/>
+                <ColumnDefinition Width="400"/>
+            </Grid.ColumnDefinitions>
+
+            <StackPanel Orientation="Vertical"
+                    Grid.Column="0"
+                    VerticalAlignment="Center">
+                <!--Name-->
+                <TextBlock Style="{StaticResource StandardTextBlock}"
+                       Text="{Haley:Lang AddBookNameTextBlock}"
+                       FontSize="16"/>
+                <TextBox Style="{StaticResource StandardTextBox}"
+                     Text="{Binding NameProperty, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+
+                <!--Amount-->
+                <TextBlock Style="{StaticResource StandardTextBlock}"
+                       Text="{Haley:Lang AddBookAmountTextBlock}"
+                       FontSize="16"/>
+                <TextBox Style="{StaticResource StandardTextBox}"
+                     Text="{Binding AmountProperty, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+
+                <!--Price-->
+                <TextBlock Style="{StaticResource StandardTextBlock}"
+                       Text="{Haley:Lang AddBookPriceTextBlock}"
+                       FontSize="16"/>
+                <TextBox Style="{StaticResource StandardTextBox}"
+                     Text="{Binding PriceProperty, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+
+                <!--Description-->
+                <TextBlock Style="{StaticResource StandardTextBlock}"
+                       Text="{Haley:Lang AddBookDescriptionTextBlock}"
+                       FontSize="16"/>
+                <TextBox Style="{StaticResource StandardTextBox}"
+                     Text="{Binding DescriptionProperty, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+
+                <!--ISBN-->
+                <TextBlock Style="{StaticResource StandardTextBlock}"
+                       Text="{Haley:Lang AddBookISBNTextBlock}"
+                       FontSize="16"/>
+                <TextBox Style="{StaticResource StandardTextBox}"
+                     Text="{Binding ISBNProperty, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+
+                <!--YearOfIssue-->
+                <TextBlock Style="{StaticResource StandardTextBlock}"
+                       Text="{Haley:Lang AddBookYearOfIssueTextBlock}"
+                       FontSize="16"/>
+                <TextBox Style="{StaticResource StandardTextBox}"
+                     Text="{Binding YearOfIssueProperty, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+
+                <!--YearOfPublication-->
+                <TextBlock Style="{StaticResource StandardTextBlock}"
+                       Text="{Haley:Lang AddBookYearOfPublicationTextBlock}"
+                       FontSize="16"/>
+                <TextBox Style="{StaticResource StandardTextBox}"
+                     Text="{Binding YearOfPublicationProperty, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+
+                <!--Language-->
+                <TextBlock Style="{StaticResource StandardTextBlock}"
+                       Text="{Haley:Lang AddBookLanguageTextBlock}"
+                       FontSize="16"/>
+                <ComboBox Width="100"
+                      SelectedValue="{Binding LanguageProperty, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                      ItemsSource="{Binding LanguagesProperty, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+                </ComboBox>
+
+                <!--Publisher-->
+                <TextBlock Style="{StaticResource StandardTextBlock}"
+                       Text="{Haley:Lang AddBookPublisherTextBlock}"
+                       FontSize="16"/>
+                <ComboBox Width="100"
+                      SelectedValue="{Binding PublisherNameProperty, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                      ItemsSource="{Binding PublishersProperty, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+                </ComboBox>
+
+                <Button x:Name="AddEmployeeButton"
+                            Command="{Binding AddBookCommand}"
+                            CommandParameter="{Binding ElementName=AuthorsListBox, Path=SelectedItems}"
+                            BorderThickness="0"
+                            Content="{Binding ButtonTextProperty, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                            Click="AddBookEventHandler"
+                            Foreground="White"
+                            FontSize="15"
+                            HorizontalAlignment="Center"
+                            FontFamily="Montserrat" 
+                            Margin="0,30,0,0">
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Setter Property="Background"  Value="{DynamicResource textColor}"></Setter>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="DarkBlue"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Border Width="250" Height="30"
+                                        CornerRadius="10"
+                                        Background="{TemplateBinding Background}">
+                                <ContentPresenter VerticalAlignment="Center"
+                                                      HorizontalAlignment="Center" />
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+            </StackPanel>
+
+            <TextBlock Style="{StaticResource StandardTextBlock}"
+                   FontSize="16"
+                   Grid.Column="1"
+                   Text="{Haley:Lang AddBookSelectAuthorsTextBlock}"
+                   Margin="0,5,0,0"/>
+            <ListBox Grid.Column="1"
+                 x:Name="AuthorsListBox"
+                 SelectionMode="Multiple"
+                 Background="Transparent"
+                 Height="300"
+                 Width="300"
+                 VerticalAlignment="Top"
+                 Margin="0,40,0,0"
+                 ItemsSource="{Binding AuthorsProperty, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                 Foreground="{DynamicResource color1}">
+            </ListBox>
+        </Grid>
+    </Border>
+</UserControl>

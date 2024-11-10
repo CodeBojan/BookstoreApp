@@ -1,0 +1,327 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=6.0.2.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=6.0.2.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AddArticleAmountTextBlock" xml:space="preserve">
+    <value>Kolicina</value>
+  </data>
+  <data name="AddArticleButtonTextAdd" xml:space="preserve">
+    <value>Dodaj Artikal</value>
+  </data>
+  <data name="AddArticleButtonTextUpdate" xml:space="preserve">
+    <value>Azuriraj Artikal</value>
+  </data>
+  <data name="AddArticleDescriptionTextBlock" xml:space="preserve">
+    <value>Opis</value>
+  </data>
+  <data name="AddArticleInfoAdd" xml:space="preserve">
+    <value>Artikal uspesno dodan!</value>
+  </data>
+  <data name="AddArticleInfoUpdate" xml:space="preserve">
+    <value>Artikal uspesno azuriran!</value>
+  </data>
+  <data name="AddArticleNameTextBlock" xml:space="preserve">
+    <value>Ime</value>
+  </data>
+  <data name="AddArticlePriceTextBlock" xml:space="preserve">
+    <value>Cena</value>
+  </data>
+  <data name="AddAuthorButtonTextAdd" xml:space="preserve">
+    <value>Dodaj Autora</value>
+  </data>
+  <data name="AddAuthorButtonTextUpdate" xml:space="preserve">
+    <value>Azuriraj Autora</value>
+  </data>
+  <data name="AddAuthorInfoAdd" xml:space="preserve">
+    <value>Autor uspesno dodan!</value>
+  </data>
+  <data name="AddAuthorInfoUpdate" xml:space="preserve">
+    <value>Autor uspesno azuriran!</value>
+  </data>
+  <data name="AddAuthorNameTextBlock" xml:space="preserve">
+    <value>Ime</value>
+  </data>
+  <data name="AddAuthorSurnameTextBlock" xml:space="preserve">
+    <value>Prezime</value>
+  </data>
+  <data name="AddBookAmountTextBlock" xml:space="preserve">
+    <value>Kolicina</value>
+  </data>
+  <data name="AddBookButtonTextAdd" xml:space="preserve">
+    <value>Dodaj Knjigu</value>
+  </data>
+  <data name="AddBookButtonTextUpdate" xml:space="preserve">
+    <value>Azuriraj Knjigu</value>
+  </data>
+  <data name="AddBookDescriptionTextBlock" xml:space="preserve">
+    <value>Opis</value>
+  </data>
+  <data name="AddBookExistenceWarning" xml:space="preserve">
+    <value>Knjiga vec postoji!</value>
+  </data>
+  <data name="AddBookInfoAdd" xml:space="preserve">
+    <value>Knjiga uspesno dodana!</value>
+  </data>
+  <data name="AddBookInfoUpdate" xml:space="preserve">
+    <value>Knjiga uspesno azurirana!</value>
+  </data>
+  <data name="AddBookISBNTextBlock" xml:space="preserve">
+    <value>ISBN</value>
+  </data>
+  <data name="AddBookLanguageTextBlock" xml:space="preserve">
+    <value>Jezik</value>
+  </data>
+  <data name="AddBookNameTextBlock" xml:space="preserve">
+    <value>Ime</value>
+  </data>
+  <data name="AddBookPriceTextBlock" xml:space="preserve">
+    <value>Cena</value>
+  </data>
+  <data name="AddBookPublisherTextBlock" xml:space="preserve">
+    <value>Izdavac</value>
+  </data>
+  <data name="AddBookSelectAuthorsTextBlock" xml:space="preserve">
+    <value>Izaberi Autore</value>
+  </data>
+  <data name="AddBookYearOfIssueTextBlock" xml:space="preserve">
+    <value>Godina Izdanja</value>
+  </data>
+  <data name="AddBookYearOfPublicationTextBlock" xml:space="preserve">
+    <value>Godina Objavljivanja</value>
+  </data>
+  <data name="AddEmployeeButtonTextAdd" xml:space="preserve">
+    <value>Dodaj Zaposlenog</value>
+  </data>
+  <data name="AddEmployeeButtonTextUpdate" xml:space="preserve">
+    <value>Azuriraj Zaposlenog</value>
+  </data>
+  <data name="AddEmployeeConfirmPasswordTextBlock" xml:space="preserve">
+    <value>Potvrdi Lozinku</value>
+  </data>
+  <data name="AddEmployeeNameTextBlock" xml:space="preserve">
+    <value>Korisnicko Ime</value>
+  </data>
+  <data name="AddEmployeePasswordTextBlock" xml:space="preserve">
+    <value>Lozinka</value>
+  </data>
+  <data name="AddEmployeeUINTextBlock" xml:space="preserve">
+    <value>JMB</value>
+  </data>
+  <data name="AddItemsButtonTextAddArticle" xml:space="preserve">
+    <value>Dodaj Artikal</value>
+  </data>
+  <data name="AddItemsButtonTextAddAuthor" xml:space="preserve">
+    <value>Dodaj Autora</value>
+  </data>
+  <data name="AddItemsButtonTextAddBook" xml:space="preserve">
+    <value>Dodaj Knjigu</value>
+  </data>
+  <data name="AddItemsButtonTextAddPublisher" xml:space="preserve">
+    <value>Dodaj Izdavaca</value>
+  </data>
+  <data name="AddPublisherButtonTextAdd" xml:space="preserve">
+    <value>Dodaj Izdavaca</value>
+  </data>
+  <data name="AddPublisherButtonTextUpdate" xml:space="preserve">
+    <value>Azuriraj Izdavaca</value>
+  </data>
+  <data name="AddPublisherInfoAdd" xml:space="preserve">
+    <value>Izdavac uspesno dodan!</value>
+  </data>
+  <data name="AddPublisherInfoUpdate" xml:space="preserve">
+    <value>Izdavac uspesno azuriran!</value>
+  </data>
+  <data name="AddPublisherNameTextBlock" xml:space="preserve">
+    <value>Ime</value>
+  </data>
+  <data name="DatabaseComboItemArticles" xml:space="preserve">
+    <value>Artikli</value>
+  </data>
+  <data name="DatabaseComboItemAuthors" xml:space="preserve">
+    <value>Autori</value>
+  </data>
+  <data name="DatabaseComboItemBills" xml:space="preserve">
+    <value>Racuni</value>
+  </data>
+  <data name="DatabaseComboItemBooks" xml:space="preserve">
+    <value>Knjige</value>
+  </data>
+  <data name="DatabaseComboItemPublishers" xml:space="preserve">
+    <value>Izdavaci</value>
+  </data>
+  <data name="DatabaseSearchBarText" xml:space="preserve">
+    <value>Pretraga...</value>
+  </data>
+  <data name="LoginAuthenticationError" xml:space="preserve">
+    <value>Nevalidni Kredencijali</value>
+  </data>
+  <data name="LoginButtonText" xml:space="preserve">
+    <value>Prijava</value>
+  </data>
+  <data name="LoginNotRegisteredError" xml:space="preserve">
+    <value>Niste Registrovani</value>
+  </data>
+  <data name="LoginPasswordTextBlock" xml:space="preserve">
+    <value>Lozinka</value>
+  </data>
+  <data name="LoginTextBlock" xml:space="preserve">
+    <value>Prijava</value>
+  </data>
+  <data name="LoginUsernameTextBlock" xml:space="preserve">
+    <value>Korisnicko Ime</value>
+  </data>
+  <data name="MainAddItemsButtonText" xml:space="preserve">
+    <value>Dodaj Stavke</value>
+  </data>
+  <data name="MainDatabaseButtonText" xml:space="preserve">
+    <value>Baza</value>
+  </data>
+  <data name="MainManageAccountsButtonText" xml:space="preserve">
+    <value>Rukovodi Nalozima</value>
+  </data>
+  <data name="MainPurchaseButtonText" xml:space="preserve">
+    <value>Kupi</value>
+  </data>
+  <data name="ManageAccountsAddEmployeeButtonText" xml:space="preserve">
+    <value>Dodaj Zaposlenog</value>
+  </data>
+  <data name="ManageAccountsViewEmployeesButtonText" xml:space="preserve">
+    <value>Pregled Zaposlenih</value>
+  </data>
+  <data name="PurchaseAddBillButtonText" xml:space="preserve">
+    <value>Dodaj Racun</value>
+  </data>
+  <data name="PurchaseAddBillItemButtonText" xml:space="preserve">
+    <value>Dodaj Stavke</value>
+  </data>
+  <data name="PurchaseAmountError" xml:space="preserve">
+    <value>Nema dovoljno u bazi</value>
+  </data>
+  <data name="PurchaseAmountTextBlock" xml:space="preserve">
+    <value>Kolicina</value>
+  </data>
+  <data name="PurchaseArticleTextBlock" xml:space="preserve">
+    <value>Artikal</value>
+  </data>
+  <data name="PurchaseBillItemsTextBlock" xml:space="preserve">
+    <value>Stavke</value>
+  </data>
+  <data name="PurchasePriceTextBlock" xml:space="preserve">
+    <value>Racun</value>
+  </data>
+</root>

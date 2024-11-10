@@ -1,0 +1,253 @@
+﻿<Window x:Class="Bookstore.View.Main"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Bookstore.View"
+        xmlns:FontAwesome="http://schemas.awesome.incremented/wpf/xaml/fontawesome.sharp"
+        xmlns:ViewModel="clr-namespace:Bookstore.ViewModel"
+        xmlns:Languages="clr-namespace:Bookstore.Languages"
+        xmlns:Haley="http://schemas.hpod9.com/haley/mvvm"
+        mc:Ignorable="d"
+        Title="Main" Height="700" Width="1500"
+        WindowStartupLocation="CenterScreen"
+        WindowStyle="None"
+        IsVisibleChanged="WindowShownEventHandler"
+        Background="Transparent"
+        AllowsTransparency="True">
+
+    <Window.Resources>
+        <DataTemplate DataType="{x:Type ViewModel:PurchaseViewModel}">
+            <local:Purchase/>
+        </DataTemplate>
+
+        <DataTemplate DataType="{x:Type ViewModel:DatabaseViewModel}">
+            <local:Database/>
+        </DataTemplate>
+
+        <DataTemplate DataType="{x:Type ViewModel:AddItemsViewModel}">
+            <local:AddItems/>
+        </DataTemplate>
+
+        <DataTemplate DataType="{x:Type ViewModel:AddAuthorViewModel}">
+            <local:AddAuthor/>
+        </DataTemplate>
+
+        <DataTemplate DataType="{x:Type ViewModel:AddArticleViewModel}">
+            <local:AddArticle/>
+        </DataTemplate>
+
+        <DataTemplate DataType="{x:Type ViewModel:AddBookViewModel}">
+            <local:AddBook/>
+        </DataTemplate>
+
+        <DataTemplate DataType="{x:Type ViewModel:AddPublisherViewModel}">
+            <local:AddPublisher/>
+        </DataTemplate>
+
+        <DataTemplate DataType="{x:Type ViewModel:ManageAccountsViewModel}">
+            <local:ManageAccounts/>
+        </DataTemplate>
+
+        <DataTemplate DataType="{x:Type ViewModel:AddEmployeeViewModel}">
+            <local:AddEmployee/>
+        </DataTemplate>
+
+        <DataTemplate DataType="{x:Type ViewModel:ReadEmployeesViewModel}">
+            <local:ReadEmployees/>
+        </DataTemplate>
+        <BooleanToVisibilityConverter x:Key="BoolToVisibility"/>
+    </Window.Resources>
+
+
+    <Border CornerRadius="50"
+            BorderThickness="3">
+        <Border.BorderBrush>
+            <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                <GradientStop Color="{DynamicResource winBorderColor1}" Offset="0"/>
+                <GradientStop Color="{DynamicResource winBorderColor2}"  Offset="0.75"/>
+                <GradientStop Color="{DynamicResource winBorderColor3}"  Offset="1"/>
+            </LinearGradientBrush>
+        </Border.BorderBrush>
+
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <!--Navigation menu-->
+                <ColumnDefinition Width="250"/>
+                <!--Main View content-->
+                <ColumnDefinition Width="*"/>
+                <!---->
+            </Grid.ColumnDefinitions>
+
+            <!--Navigation Menu-->
+            <Border CornerRadius="50,0,0,50"
+                    Grid.Column="0">
+                <Border.Background>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                        <GradientStop Color="{DynamicResource secondaryBackColor1}" Offset="0.5"/>
+                        <GradientStop Color="{DynamicResource secondaryBackColor2}" Offset="0.75"/>
+                    </LinearGradientBrush>
+                </Border.Background>
+
+                <!--Content of the menu-->
+                <StackPanel>
+                    <StackPanel Orientation="Horizontal"
+                                Height="35"
+                                Margin="15,25,0,40">
+                        <Image Source="../Images/ramajana.png" Height="30"/>
+                        <TextBlock Text="Ramajana" 
+                                   Foreground="{DynamicResource titleColor1}"
+                                   FontSize="20"
+                                   FontWeight="Medium"
+                                   Margin="10,0,0,0"
+                                   FontFamily="Montserrat"
+                                   VerticalAlignment="Center"/>
+                    </StackPanel>
+
+                    <!--Menu buttons-->
+                    <RadioButton Style="{StaticResource MenuButton}"
+                                 Tag="{DynamicResource color1}"
+                                 x:Name="PurchaseButton"
+                                 Command="{Binding ShowPurchaseViewCommand}">
+                        <StackPanel Orientation="Horizontal" Visibility="Visible">
+                            <FontAwesome:IconImage x:Name="PurchaseButtonIcon" Icon="SackDollar" Style="{StaticResource MenuButtonIcon}"/>
+                            <TextBlock x:Name="PurchaseButtonText" Text="{Haley:Lang MainPurchaseButtonText}" Style="{StaticResource MenuButtonText}"/>
+                        </StackPanel>
+                    </RadioButton>
+
+                    <RadioButton Style="{StaticResource MenuButton}"
+                                 Tag="{DynamicResource color2}"
+                                 x:Name="DatabaseButton"
+                                 Command="{Binding ShowDatabaseViewCommand}">
+                        <StackPanel Orientation="Horizontal">
+                            <FontAwesome:IconImage x:Name="DatabaseButtonIcon" Icon="Database" Style="{StaticResource MenuButtonIcon}"/>
+                            <TextBlock x:Name="DatabaseButtonText" Text="{Haley:Lang MainDatabaseButtonText}" Style="{StaticResource MenuButtonText}"/>
+                        </StackPanel>
+                    </RadioButton>
+
+                    <RadioButton Style="{StaticResource MenuButton}"
+                                 Tag="{DynamicResource color3}"
+                                 x:Name="AddItemsButton"
+                                 Command="{Binding ShowAddItemsViewCommand}">
+                        <StackPanel Orientation="Horizontal">
+                            <FontAwesome:IconImage x:Name="AddItemsButtonIcon" Icon="PlusSquare" Style="{StaticResource MenuButtonIcon}"/>
+                            <TextBlock x:Name="AddItemsButtonText" Text="{Haley:Lang MainAddItemsButtonText}" Style="{StaticResource MenuButtonText}"/>
+                        </StackPanel>
+                    </RadioButton>
+
+                    <RadioButton Style="{StaticResource MenuButton}"
+                                 Tag="{DynamicResource color4}"
+                                 x:Name="ManageAccountsButton"
+                                 Visibility="{Binding IsManageAccountsVisibleProperty, Mode=TwoWay, Converter={StaticResource BoolToVisibility}}"
+                                 Command="{Binding ShowManageAccountsViewCommand}">
+                        <StackPanel Orientation="Horizontal">
+                            <FontAwesome:IconImage x:Name="ManageAccountsButtonIcon" Icon="UserEdit" Style="{StaticResource MenuButtonIcon}"/>
+                            <TextBlock x:Name="ManageAccountsButtonText" Text="{Haley:Lang MainManageAccountsButtonText}" Style="{StaticResource MenuButtonText}"/>
+                        </StackPanel>
+                    </RadioButton>
+
+                </StackPanel>
+
+            </Border>
+
+            <Border CornerRadius="0,50,50,0"
+                    Grid.Column="1">
+                <Border.Background>
+                    <LinearGradientBrush StartPoint="1,1" EndPoint="0,0">
+                        <GradientStop Color="{DynamicResource primaryBackColor1}" Offset="0.25"/>
+                        <GradientStop Color="{DynamicResource primaryBackColor2}" Offset="0.75"/>
+                    </LinearGradientBrush>
+                </Border.Background>
+
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <!--Control bar for exit, minimize and maximize-->
+                        <RowDefinition Height="25"/>
+                        <!--Header section-->
+                        <RowDefinition Height="35"/>
+                        <!--Main content section-->
+                        <RowDefinition Height="35"/>
+                    </Grid.RowDefinitions>
+
+                    <!--Control bar-->
+                    <StackPanel x:Name="ControlBar"
+                                Grid.Row="0"
+                                Orientation="Horizontal"
+                                FlowDirection="RightToLeft"
+                                Background="Transparent"
+                                Margin="0,0,15,0"
+                                MouseLeftButtonDown="MouseLeftButtonDownEventHandler"
+                                MouseEnter="MouseEnterEventHandler">
+
+                        <Button x:Name="CloseButton"
+                                Style="{StaticResource ControlButton}"
+                                Tag="{DynamicResource color4}"
+                                Click="CloseButtonEventHandler">
+                            <FontAwesome:IconImage Style="{StaticResource ControlButtonIcon}" Icon="Xmark"/>
+                        </Button>
+
+                        <Button x:Name="MaximizeButton"
+                                Style="{StaticResource ControlButton}"
+                                Tag="{DynamicResource color4}"
+                                Click="MaximizeButtonEventHandler">
+                            <FontAwesome:IconImage Style="{StaticResource ControlButtonIcon}" Icon="WindowMaximize"/>
+                        </Button>
+
+                        <Button x:Name="MinimizeButton"
+                                Style="{StaticResource ControlButton}"
+                                Tag="{DynamicResource color4}"
+                                Click="MinimizeButtonEventHandler">
+                            <FontAwesome:IconImage Style="{StaticResource ControlButtonIcon}" Icon="WindowMinimize"/>
+                        </Button>
+                    </StackPanel>
+
+                    <!--Header section-->
+                    <Grid Grid.Row="1">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+
+                        <StackPanel Grid.Column="0"
+                                    Orientation="Horizontal"
+                                    VerticalAlignment="Center">
+                            <FontAwesome:IconImage Icon="{Binding CurrentSelectedIconProperty, UpdateSourceTrigger=PropertyChanged}"
+                                                   Height="20"
+                                                   Width="20"
+                                                   Foreground="{DynamicResource titleColor2}"
+                                                   Margin="35,0,10,0"/>
+                            <TextBlock Text="{Binding CurrentSelectedTextProperty, UpdateSourceTrigger=PropertyChanged}"
+                                       Foreground="{DynamicResource titleColor2}"
+                                       FontSize="16"
+                                       FontWeight="Medium"
+                                       FontFamily="Montserrat"
+                                       VerticalAlignment="Center"/>
+                        </StackPanel>
+
+                        <StackPanel Grid.Column="1"
+                                    x:Name="LogoutButton"
+                                    Orientation="Horizontal"
+                                    VerticalAlignment="Center"
+                                    FlowDirection="RightToLeft"
+                                    Margin="0,0,10,0">
+                            <Button Style="{StaticResource UserOptionButton}"
+                                    Tag="{DynamicResource color1}"
+                                    Click="ChangeStyleEventHandler">
+                                <FontAwesome:IconImage Icon="AngleDown" Style="{StaticResource UserOptionButtonIcon}"/>
+                            </Button>
+
+                            <TextBlock Text="{Binding CurrentEmployeeProperty.Name}"/>
+                        </StackPanel>
+
+                    </Grid>
+                    <!--Content section - child views-->
+                    <ContentControl Content="{Binding CurrentChildViewProperty, UpdateSourceTrigger=PropertyChanged}"
+                                    Grid.Row="2"
+                                    Margin="25,25,25,-575">
+                    </ContentControl>
+                </Grid>
+            </Border>
+        </Grid>
+
+    </Border>
+</Window>
